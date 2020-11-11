@@ -38,4 +38,12 @@ class Market
         breakdown
     end
 
+    def overstocked_items
+        overstocked_list = []
+        total_inventory.each do |item, info|
+            overstocked_list << item if info[:quantity] > 50 && info[:vendors].count > 1
+        end
+        overstocked_list
+    end
+
 end
