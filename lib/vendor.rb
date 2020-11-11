@@ -19,5 +19,4 @@ class Vendor
             item.price * qty
         end
     end
-
 end
