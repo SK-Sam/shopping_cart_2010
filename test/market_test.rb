@@ -11,6 +11,7 @@ class MarketTest < MiniTest::Test
         @item2 = Item.new({name: 'Tomato', price: "$0.50"})
         @item3 = Item.new({name: "Peach-Raspberry Nice Cream", price: "$5.30"})
         @item4 = Item.new({name: "Banana Nice Cream", price: "$4.25"})
+        @item5 = Item.new({name: 'Onion', price: '$0.25'})
         @vendor1 = Vendor.new("Rocky Mountain Fresh")
         @vendor2 = Vendor.new("Ba-Nom-a-Nom")
         @vendor3 = Vendor.new("Palisade Peach Shack")
@@ -115,5 +116,9 @@ class MarketTest < MiniTest::Test
 
         expected = ["Banana Nice Cream", "Peach", "Peach-Raspberry Nice Cream", "Tomato"]
         assert_equal expected, @market.sorted_item_list
+    end
+
+    def test_it_can_instantiate_with_date
+        assert_equal "24/02/2020", @market.date
     end
 end
