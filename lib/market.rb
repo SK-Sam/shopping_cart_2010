@@ -60,4 +60,18 @@ class Market
             end
         end.uniq.sort
     end
+
+    # def sell(item, qty)
+    #     breakdown = total_inventory
+    #     return false if breakdown.keys.include?(item) == false 
+    #     return false if breakdown[item][:quantity] < qty
+    #     items_left = breakdown[item][:quantity]
+    #     breakdown[item][:vendors].each do |vendor|
+    #         items_to_subtract = (qty - vendor.inventory[item]).abs
+    #         vendor.inventory[item] -= items_to_subtract
+    #         items_left -= items_to_subtract
+    #         break if vendor.inventory[item] == 0
+    #     end
+    #     true
+    # end
 end
