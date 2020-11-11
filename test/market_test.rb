@@ -2,6 +2,7 @@ require 'minitest/autorun'
 require './lib/item'
 require './lib/vendor'
 require './lib/market'
+require 'mocha/minitest'
 
 class MarketTest < MiniTest::Test
 
@@ -119,6 +120,9 @@ class MarketTest < MiniTest::Test
     end
 
     def test_it_can_instantiate_with_date
-        assert_equal "24/02/2020", @market.date
+        Date.stubs(:today).returns(Date.parse("20200224"))
+        market = Market.new("South Pearl Street Farmers Market")
+
+        assert_equal "24/02/2020", market.date
     end
 end
