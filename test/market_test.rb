@@ -56,7 +56,7 @@ class MarketTest < MiniTest::Test
         assert_equal [@vendor2], @market.vendors_that_sell(@item4)
     end
 
-    def test_it_can_get_sorted_item_list
+    def test_it_can_get_total_inventory_breakdown
         @vendor1.stock(@item1, 35)
         @vendor1.stock(@item2, 7)
         @vendor2.stock(@item4, 50)
