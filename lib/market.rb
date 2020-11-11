@@ -22,4 +22,20 @@ class Market
         end
     end
 
+    def total_inventory
+        breakdown = {}
+        @vendors.each do |vendor|
+            vendor.inventory.each do |item, qty|
+                if breakdown[item]
+                    breakdown[item][:quantity] += qty
+                else
+                    breakdown[item] = {quantity: qty,
+                                        vendors: vendors_that_sell(item)
+                                    }
+                end
+            end
+        end
+        breakdown
+    end
+
 end
